@@ -9,4 +9,13 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tree.Model\Tree.Model.csproj" />
+    <ProjectReference Include="..\Tree.Repository\Tree.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Api", "Tree\Tree.Api.csproj", "{8C34C694-0179-4D52-BA6B-DEDF39250C34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Api", "Tree.Api\Tree.Api.csproj", "{8C34C694-0179-4D52-BA6B-DEDF39250C34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Service", "Tree.Service\Tree.Service.csproj", "{C947223A-0E06-43D6-9C6E-52D54869967E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Service", "Tree.Service\Tree.Service.csproj", "{C947223A-0E06-43D6-9C6E-52D54869967E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Repository", "Tree.Repository\Tree.Repository.csproj", "{5F14F971-AF71-4122-B0F0-2A16F806D20C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Repository", "Tree.Repository\Tree.Repository.csproj", "{5F14F971-AF71-4122-B0F0-2A16F806D20C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Database", "Tree.Database\Tree.Database.csproj", "{5DE66221-E096-4D38-9C2E-778DDC888D47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Database", "Tree.Database\Tree.Database.csproj", "{5DE66221-E096-4D38-9C2E-778DDC888D47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Model", "Tree.Model\Tree.Model.csproj", "{61E637B1-B852-479B-8B91-197CB6CE93E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Model", "Tree.Model\Tree.Model.csproj", "{61E637B1-B852-479B-8B91-197CB6CE93E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Client", "Tree.Client\Tree.Client.csproj", "{CF350773-6069-4118-B961-76C6855F82B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Common", "Tree.Common\Tree.Common.csproj", "{BEE78977-3292-4AB3-B4D8-40BE23C87D01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{61E637B1-B852-479B-8B91-197CB6CE93E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61E637B1-B852-479B-8B91-197CB6CE93E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61E637B1-B852-479B-8B91-197CB6CE93E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF350773-6069-4118-B961-76C6855F82B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF350773-6069-4118-B961-76C6855F82B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF350773-6069-4118-B961-76C6855F82B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF350773-6069-4118-B961-76C6855F82B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE78977-3292-4AB3-B4D8-40BE23C87D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE78977-3292-4AB3-B4D8-40BE23C87D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE78977-3292-4AB3-B4D8-40BE23C87D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE78977-3292-4AB3-B4D8-40BE23C87D01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

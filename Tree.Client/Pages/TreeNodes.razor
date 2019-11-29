@@ -1,0 +1,23 @@
+﻿@page "/treenodes"
+
+@using Tree.Client.Data
+@inject TreeService TreeService
+
+@if (result == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div> @((MarkupString)result)</div>
+
+}
+
+@code {
+    string result;
+
+    protected override async Task OnInitializedAsync()
+    {
+        result = await TreeService.BuildTreeAsync();
+    }
+}
