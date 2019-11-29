@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Threading.Tasks;
 using Tree.Database;
 using Tree.Repository;
 using Tree.Service;
@@ -20,10 +21,10 @@ namespace Tree
         {
             Configuration = configuration;
         }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TreeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), 
+            services.AddDbContext<TreeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()));
 
             services.AddMvc();
@@ -38,11 +39,14 @@ namespace Tree
 
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                var nodeService = serviceScope.ServiceProvider.GetRequiredService<INodeService>();
-                nodeService.AddRootAsync();
-            }
-                app.UseHttpsRedirection();
+                var context = serviceScope.ServiceProvider.GetRequiredService<TreeContext>();
+                context.Database.Migrate();
 
+                var nodeService = serviceScope.ServiceProvider.GetRequiredService<INodeService>();
+                nodeService.AddRootAsync().Wait();
+            }
+
+            app.UseHttpsRedirection();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

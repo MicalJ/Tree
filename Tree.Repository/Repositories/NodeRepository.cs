@@ -83,6 +83,19 @@ namespace Tree.Repository.Repositories
                 .AnyAsync(a => a.ParentId == parentId);
         }
 
+        public async Task AddRootAsync()
+        {
+            await _context.AddAsync(new Node
+            {
+                Name = "Root",
+                ParentId = null,
+                CreatedDate = DateTime.UtcNow,
+                UpdatedDate = DateTime.UtcNow
+            });
+
+            await _context.SaveChangesAsync();
+        }
+
         private async Task<Node> GetEntityByIdAsync(int id)
         {
             var nodeEntity = await _context.Set<Node>()

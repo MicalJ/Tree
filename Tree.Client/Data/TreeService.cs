@@ -86,6 +86,11 @@ namespace Tree.Client.Data
 
             return await Task.Run(() =>
             {
+                if (nodes == null || nodes.Count == 0)
+                {
+                    return string.Empty;
+                }
+
                 Node root = nodes.Where(w => w.ParentId == null).First();
                 List<Node> children = nodes.Where(w => w.ParentId != null).ToList();
 

@@ -42,17 +42,12 @@ namespace Tree.Service.Services
 
         public async Task AddRootAsync()
         {
-            string rootName = "Root";
-
             if (await _nodeRepository.IsExistAsync())
             {
                 return;
             }
 
-            await _nodeRepository.AddAsync(new NodeData
-            {
-                Name = rootName
-            });
+            await _nodeRepository.AddRootAsync();
         }
     }
 }

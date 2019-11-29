@@ -12,5 +12,6 @@ namespace Tree.Repository.Interfaces
         Task<List<NodeWithId>> GetAsync();
         Task DeleteAsync(int id);
         Task<bool> IsExistAsync(int? parentId = null);
+        Task AddRootAsync();
     }
 }
