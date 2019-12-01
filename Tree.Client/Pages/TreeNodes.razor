@@ -1,23 +1,27 @@
-﻿@page "/treenodes"
+﻿@page "/"
 
+@using Microsoft.AspNetCore.Components
 @using Tree.Client.Data
 @inject TreeService TreeService
 
-@if (result == null)
+@if (tree == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <div> @((MarkupString)result)</div>
-
+    <div class="tree">
+        <ul class="treeNodes">
+            @((MarkupString)tree)
+        </ul>
+    </div>
 }
 
 @code {
-    string result;
+    string tree;
 
     protected override async Task OnInitializedAsync()
     {
-        result = await TreeService.BuildTreeAsync();
+        tree = await TreeService.BuildTreeAsync();
     }
 }

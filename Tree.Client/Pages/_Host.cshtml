@@ -14,9 +14,11 @@
 </head>
 <body>
     <app>
-        @(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))
+        @(await Html.RenderComponentAsync<App>(RenderMode.Static))
     </app>
 
     <script src="_framework/blazor.server.js"></script>
+    <script src="~/js/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/tree.js"></script>
 </body>
 </html>
