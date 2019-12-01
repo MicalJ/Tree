@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
+using Tree.Api.Validation;
 using Tree.Database;
 using Tree.Repository;
 using Tree.Service;
@@ -27,11 +28,16 @@ namespace Tree
             services.AddDbContext<TreeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()));
 
-            services.AddMvc();
+            services.AddMvc(opt =>
+            {
+                opt.Filters.Add(typeof(ValidatorActionFilter));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
